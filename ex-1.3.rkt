@@ -1,0 +1,10 @@
+#lang racket
+(define (sum_of_squares x y) (+ (* x x) (* y y)))
+(define (process a b c) (if (> a b)
+                            (if(> b c)
+                               (sum_of_squares a b)
+                               (sum_of_squares a c)) 
+                            (if(> a c)
+                               (sum_of_squares b a)
+                               (sum_of_squares b c)) ))
+ (process 5 3 4)
