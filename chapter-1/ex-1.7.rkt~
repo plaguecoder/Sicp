@@ -1,0 +1,18 @@
+#lang racket
+
+(define (good guess oldguess x)
+  (< (abs (- guess oldguess) 0.0001))
+ )
+
+(define (improve guess x) (sqrt (/ (+ guess (/ x guess)) 2) guess x))
+
+
+(define (sqrt guess oldguess x)
+  (if (good guess oldguess x)
+       guess
+       (improve guess x)
+    )
+  )
+
+
+(sqrt 1 48)
