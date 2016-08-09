@@ -1,7 +1,5 @@
 #lang scheme
 
-#lang scheme
-
 ;recursive process
 
 ;(define (accumulate combiner null-value a term b next)
