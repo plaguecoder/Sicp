@@ -1,0 +1,31 @@
+#lang scheme
+
+(define (reverse l)
+  (define (iter l result)
+  (if (null? (cdr l))
+      (cons (car l) result)
+      (iter (cdr l) (cons (car l) result))
+      )
+  )
+  (iter l null)
+  )
+
+(define (fringe l)
+  (define (iter l result)
+  (if(null? (cdr l))
+     (if (pair? (car l))
+         (iter (car l) result)
+         (cons (car l) result)
+         )
+     (if (pair? (car l))
+         (iter (cdr l) (iter (car l) result))
+         (iter (cdr l) (cons (car l) result))
+         )
+     )
+    )
+  (reverse (iter l null))
+  )
+
+
+(define x (list (list 1 2) 67 (list 3 4) 5 ))
+(fringe x)
