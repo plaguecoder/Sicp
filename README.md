@@ -1,2 +1,2 @@
 # Sicp
-Solutions
+Solutions of exercises of Sicp.
